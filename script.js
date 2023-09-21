@@ -13,10 +13,18 @@ addTaskButton.addEventListener("click", (e) => {
   // start by setting a variable named todo to equal localstorage.getitem("todo")
   // Add code below this line
 
+  var todo = localStorage.getItem("todo");
+
   // check if todo is null, if it is set todoArray = []
   // else set todoArray to JSON.parse() your variable passed into the parse method.
 
+  todo === null ? (todoArray = []) : (todoArray = JSON.parse(todo));
+
   // check if text.value is empty, alert that the input is empty and return
+
+  if (text.value.length < 1) {
+    alert("Text cannot be empty. Try again.");
+  }
 
   // now that you've parsed the value, push the text.value to the todoArray.
   // set the text.value to an empty string.
